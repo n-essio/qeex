@@ -1,5 +1,6 @@
 package io.quarkus.qeex.api.annotations;
 
+
 import io.smallrye.config.ConfigMapping;
 import io.smallrye.config.WithName;
 
