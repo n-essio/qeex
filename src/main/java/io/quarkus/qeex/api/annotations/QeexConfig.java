@@ -33,21 +33,26 @@ public interface QeexConfig {
         if (code == null) {
             return default_code().get();
         }
-        Optional<Integer> mess = messages()
-                .stream()
-                .filter(msg -> msg.id().equals(id))
-                .findFirst()
-                .flatMap(message1 -> message1.code());
-        return mess.orElse(code);
+        for (Message msg : messages()) {
+            if (msg.id().isPresent() && msg.id().get().equals(id)) {
+                if (msg.code().isPresent()) {
+                    return msg.code().get();
+                }
+            }
+        }
+        return code;
     }
 
     default String get_message(int id, String message) {
-        Optional<String> mess = messages()
-                .stream()
-                .filter(msg -> msg.id().equals(id))
-                .findFirst()
-                .flatMap(message1 -> message1.message());
-        return mess.orElse(message);
+
+        for (Message msg : messages()) {
+            if (msg.id().isPresent() && msg.id().get().equals(id)) {
+                if (msg.message().isPresent()) {
+                    return msg.message().get();
+                }
+            }
+        }
+        return message;
     }
 
     default String get_project(String project) {
