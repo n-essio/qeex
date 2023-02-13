@@ -10,7 +10,12 @@ import java.io.IOException;
 @ApplicationScoped
 public class LanguageInterceptor implements ContainerRequestFilter {
 
-    public String language;
+    private String language;
+
+
+    public String getLanguage() {
+        return language;
+    }
 
     @Override
     public void filter(ContainerRequestContext context) throws IOException {

@@ -21,7 +21,7 @@ public class QeexWebException extends Exception {
     }
 
 
-    public String toJson(String language) {
+    public String toJson() {
         return "{\"projectName\":\"" + this.projectName + "\"," +
                 "\"code\":" + this.code + ", " +
                 "\"message\":\"" + this.message + "\", " +
