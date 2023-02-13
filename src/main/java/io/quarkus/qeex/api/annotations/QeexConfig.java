@@ -49,8 +49,15 @@ public interface QeexConfig {
     }
 
     default String get_message(int id, String message, String language) {
+        var lang = default_language().get();
+        if (language != null) {
+            lang = language;
+        }
         for (Message msg : messages()) {
             if (msg.id().isPresent() && msg.id().get().equals(id)) {
+                if (lang != null && msg.language().containsKey(language)) {
+                    return msg.language().get(language);
+                }
                 if (msg.message().isPresent()) {
                     return msg.message().get();
                 }
