@@ -29,7 +29,7 @@ public class AllExceptionsImpl implements AllExceptions {
                 _id,
                 qeexConfig.get_code(_id, code),
                 qeexConfig.get_message(_id, message, languageInterceptor.getLanguage()),
-                qeexConfig.get_language(_id, language));
+                qeexConfig.get_language(_id, languageInterceptor.getLanguage()));
     }
 
     @Override
@@ -43,6 +43,6 @@ public class AllExceptionsImpl implements AllExceptions {
                 _id,
                 qeexConfig.get_code(_id, code),
                 qeexConfig.get_message(_id, message, languageInterceptor.getLanguage()),
-                qeexConfig.get_language(_id, language));
+                qeexConfig.get_language(_id, languageInterceptor.getLanguage()));
     }
 }

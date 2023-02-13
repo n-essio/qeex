@@ -74,13 +74,12 @@ public interface QeexConfig {
             if (msg.id().isPresent() && msg.id().get().equals(id)) {
                 if (msg.message().isPresent()) {
                     if (msg.language().containsKey(language)) {
-                        return msg.language().get(language);
+                        return language;
                     }
-                    return msg.message().get();
                 }
             }
         }
-        return language;
+        return default_language().get();
     }
 
     default String get_project(String project) {
