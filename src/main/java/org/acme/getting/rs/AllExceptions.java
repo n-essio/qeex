@@ -17,4 +17,7 @@ public interface AllExceptions {
     @QeexMessage(id = 103, code = 500, message = "non sovrascitto")
     QeexWebException notOverrideException();
 
+    @QeexMessage(id = 104, code = 500, message = "one: %s - two: %s")
+    QeexWebException withArguments(String one, String two);
+
 }

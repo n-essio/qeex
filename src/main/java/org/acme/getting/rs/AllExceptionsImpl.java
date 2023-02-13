@@ -60,4 +60,19 @@ public class AllExceptionsImpl implements AllExceptions {
                 qeexConfig.get_message(_id, message, languageInterceptor.getLanguage()),
                 qeexConfig.get_language(_id, languageInterceptor.getLanguage()));
     }
+
+    @Override
+    public QeexWebException withArguments(String one, String two) {
+        // @QeexMessage(id = 104, code = 500, message = "one: %s - two: %s")
+        int _id = 104;
+        Integer code = 500;
+        String message = String.format("one: %s - two: %s", one, two);
+        String language = null;
+        return new QeexWebException(qeexConfig.get_project(classProjectName),
+                _id,
+                qeexConfig.get_code(_id, code),
+                qeexConfig.get_message(_id, message, languageInterceptor.getLanguage()),
+                qeexConfig.get_language(_id, languageInterceptor.getLanguage()));
+    }
+
 }

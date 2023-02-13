@@ -39,4 +39,11 @@ public class GreetingResource {
     public String hello4() throws Exception {
         throw new Exception("bohhh");
     }
+
+    @GET
+    @Path("/5")
+    @Produces(MediaType.APPLICATION_JSON)
+    public String hello5() throws Exception {
+        throw allExceptions.withArguments(".one.", ".two.");
+    }
 }
