@@ -25,4 +25,11 @@ public class GreetingResource {
     public String hello2() throws Exception {
         throw allExceptions.completeException();
     }
+
+    @GET
+    @Path("/3")
+    @Produces(MediaType.APPLICATION_JSON)
+    public String hello3() throws Exception {
+        throw allExceptions.notOverrideException();
+    }
 }

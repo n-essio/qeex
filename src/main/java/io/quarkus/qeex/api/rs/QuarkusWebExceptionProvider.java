@@ -1,9 +1,7 @@
 package io.quarkus.qeex.api.rs;
 
 import io.quarkus.qeex.api.exceptions.QeexWebException;
-import io.quarkus.qeex.api.interceptors.LanguageInterceptor;
 
-import javax.inject.Inject;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
