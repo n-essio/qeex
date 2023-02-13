@@ -32,4 +32,11 @@ public class GreetingResource {
     public String hello3() throws Exception {
         throw allExceptions.notOverrideException();
     }
+
+    @GET
+    @Path("/4")
+    @Produces(MediaType.APPLICATION_JSON)
+    public String hello4() throws Exception {
+        throw new Exception("bohhh");
+    }
 }

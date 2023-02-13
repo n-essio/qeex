@@ -7,6 +7,7 @@ public class QeexWebException extends Exception {
     public String message;        // (4)
     public String language;        // (4)
 
+    public QeexWebException(){}
     public QeexWebException(String projectName,
                             int code,
                             int httpCode,
