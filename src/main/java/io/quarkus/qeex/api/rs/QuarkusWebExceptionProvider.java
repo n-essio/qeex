@@ -13,13 +13,9 @@ import javax.ws.rs.ext.Provider;
 @Provider
 public class QuarkusWebExceptionProvider implements ExceptionMapper<QeexWebException> {
 
-    @Inject
-    LanguageInterceptor languageInterceptor;
-
     @Override
     @Produces(MediaType.APPLICATION_JSON)
     public Response toResponse(QeexWebException exception) {
-        var language = languageInterceptor.getLanguage();
         return Response
                 .status(exception.httpCode)
                 .entity(exception.toJson())
