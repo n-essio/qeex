@@ -17,4 +17,5 @@ public @interface QeexExceptionBundle {
     int id() default 100;
     int code() default 400;
     String language();
+    String message() default "";
 }

@@ -20,10 +20,14 @@ public class QuarkusWebDefaultExceptionProvider implements ExceptionMapper<Throw
     public Response toResponse(Throwable exception) {
         SmallRyeConfig config = ConfigProvider.getConfig().unwrap(SmallRyeConfig.class);
         var qeexConfig = config.getConfigMapping(QeexConfig.class);
+        String message = qeexConfig.default_message().get();
+        if (message == null || message.isBlank()) {
+            message = "no default message";
+        }
         QeexWebException webException = new QeexWebException();
         webException.language = qeexConfig.default_language().get();
         webException.code = qeexConfig.default_code().get();
-        webException.message = "default message";
+        webException.message = message;
         webException.language = qeexConfig.default_language().get();
         return Response
                 .status(webException.code)

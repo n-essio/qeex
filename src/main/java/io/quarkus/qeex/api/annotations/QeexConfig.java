@@ -21,6 +21,9 @@ public interface QeexConfig {
     @WithName("default.language")
     Optional<String> default_language();
 
+    @WithName("default.message")
+    Optional<String> default_message();
+
     @WithName("messages")
     Set<Message> messages();
 
