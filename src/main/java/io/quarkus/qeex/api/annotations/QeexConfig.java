@@ -18,6 +18,9 @@ public interface QeexConfig {
     @WithName("default.code")
     Optional<Integer> default_code();
 
+    @WithName("default.language")
+    Optional<String> default_language();
+
     @WithName("messages")
     Set<Message> messages();
 
@@ -27,6 +30,8 @@ public interface QeexConfig {
         Optional<Integer> code();
 
         Optional<Integer> id();
+
+        Map<String, String> language();
     }
 
     default Integer get_code(int id, Integer code) {
@@ -43,8 +48,7 @@ public interface QeexConfig {
         return code;
     }
 
-    default String get_message(int id, String message) {
-
+    default String get_message(int id, String message, String language) {
         for (Message msg : messages()) {
             if (msg.id().isPresent() && msg.id().get().equals(id)) {
                 if (msg.message().isPresent()) {
@@ -53,6 +57,23 @@ public interface QeexConfig {
             }
         }
         return message;
+    }
+
+    default String get_language(int id, String language) {
+        if (language == null) {
+            return default_language().get();
+        }
+        for (Message msg : messages()) {
+            if (msg.id().isPresent() && msg.id().get().equals(id)) {
+                if (msg.message().isPresent()) {
+                    if (msg.language().containsKey(language)) {
+                        return msg.language().get(language);
+                    }
+                    return msg.message().get();
+                }
+            }
+        }
+        return language;
     }
 
     default String get_project(String project) {

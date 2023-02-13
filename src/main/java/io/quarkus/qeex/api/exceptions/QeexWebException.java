@@ -20,6 +20,15 @@ public class QeexWebException extends Exception {
         this.language = language;
     }
 
+
+    public String toJson(String language) {
+        return "{\"projectName\":\"" + this.projectName + "\"," +
+                "\"code\":" + this.code + ", " +
+                "\"message\":\"" + this.message + "\", " +
+                "\"language\":\"" + this.language + "\"" +
+                "}";
+    }
+
     public QeexExceptionMessage msg(String language) {
         return new QeexExceptionMessage(this.projectName, this.code, this.message, this.language);
     }
