@@ -29,20 +29,6 @@ public class QeexWebException extends Exception {
                 "}";
     }
 
-    public QeexExceptionMessage msg(String language) {
-        return new QeexExceptionMessage(this.projectName, this.code, this.message, this.language);
-    }
-
-    public static QeexWebException build(String projectName,
-                                         int code,
-                                         int httpCode,
-                                         String message,
-                                         String language) {
-
-        return new QeexWebException(projectName, code, httpCode, message, language);
-
-    }
-
     @Override
     public String toString() {
         return "QuarkusWebException{" +
