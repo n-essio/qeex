@@ -1,5 +1,6 @@
 package org.acme.quex.rs;
 
+import org.acme.quex.enums.AcmeQeexExceptions;
 import org.acme.quex.exception.ExceptionBundle;
 
 import javax.inject.Inject;
@@ -18,7 +19,8 @@ public class GreetingResource {
     @Path("/1")
     @Produces(MediaType.APPLICATION_JSON)
     public String hello() throws Exception {
-        throw exceptionBundle.simpleException();
+        throw AcmeQeexExceptions.DUE.get();
+        // throw exceptionBundle.simpleException();
     }
 
     @GET
