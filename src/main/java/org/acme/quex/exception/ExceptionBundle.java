@@ -8,6 +8,7 @@ import io.quarkus.qeex.api.exceptions.QeexWebException;
 @QeexExceptionBundle(project = "FLW", language = "it")
 public interface ExceptionBundle {
 
+
     @QeexMessage(message = "prova")
     QeexWebException simpleException();
 

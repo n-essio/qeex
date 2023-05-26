@@ -12,6 +12,8 @@ import javax.inject.Inject;
 @Generated(value = "dev.queryable.QuexGenerator", date = "2023-05-04T12:08:56.235-0700", comments = "don't touch please")
 public class ExceptionBundleImpl implements ExceptionBundle {
 
+    private static final String xxx = null;
+
     // copied from application properties: qeex.project=FLW
     String classProjectName = "FLW";
 
