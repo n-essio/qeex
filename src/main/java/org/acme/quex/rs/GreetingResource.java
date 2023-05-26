@@ -1,4 +1,6 @@
-package org.acme.getting.rs;
+package org.acme.quex.rs;
+
+import org.acme.quex.exception.ExceptionBundle;
 
 import javax.inject.Inject;
 import javax.ws.rs.GET;
@@ -10,27 +12,27 @@ import javax.ws.rs.core.MediaType;
 public class GreetingResource {
 
     @Inject
-    AllExceptions allExceptions;
+    ExceptionBundle exceptionBundle;
 
     @GET
     @Path("/1")
     @Produces(MediaType.APPLICATION_JSON)
     public String hello() throws Exception {
-        throw allExceptions.simpleException();
+        throw exceptionBundle.simpleException();
     }
 
     @GET
     @Path("/2")
     @Produces(MediaType.APPLICATION_JSON)
     public String hello2() throws Exception {
-        throw allExceptions.completeException();
+        throw exceptionBundle.completeException();
     }
 
     @GET
     @Path("/3")
     @Produces(MediaType.APPLICATION_JSON)
     public String hello3() throws Exception {
-        throw allExceptions.notOverrideException();
+        throw exceptionBundle.notOverrideException();
     }
 
     @GET
@@ -44,6 +46,6 @@ public class GreetingResource {
     @Path("/5")
     @Produces(MediaType.APPLICATION_JSON)
     public String hello5() throws Exception {
-        throw allExceptions.withArguments(".one.", ".two.");
+        throw exceptionBundle.withArguments(".one.", ".two.");
     }
 }

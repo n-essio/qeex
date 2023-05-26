@@ -1,4 +1,4 @@
-package org.acme.getting.rs;
+package org.acme.quex.exception;
 
 import io.quarkus.qeex.api.annotations.QeexConfig;
 import io.quarkus.qeex.api.exceptions.QeexWebException;
@@ -9,8 +9,8 @@ import javax.enterprise.context.ApplicationScoped;
 import javax.inject.Inject;
 
 @ApplicationScoped
-@Generated(value = "dev.queryable.Generator", date = "2023-05-04T12:08:56.235-0700", comments = "don't touch please")
-public class AllExceptionsImpl implements AllExceptions {
+@Generated(value = "dev.queryable.QuexGenerator", date = "2023-05-04T12:08:56.235-0700", comments = "don't touch please")
+public class ExceptionBundleImpl implements ExceptionBundle {
 
     // copied from application properties: qeex.project=FLW
     String classProjectName = "FLW";

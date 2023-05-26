@@ -1,4 +1,4 @@
-package org.acme.getting.rs;
+package org.acme.quex.exception;
 
 
 import io.quarkus.qeex.api.annotations.QeexExceptionBundle;
@@ -6,7 +6,7 @@ import io.quarkus.qeex.api.annotations.QeexMessage;
 import io.quarkus.qeex.api.exceptions.QeexWebException;
 
 @QeexExceptionBundle(project = "FLW", language = "it")
-public interface AllExceptions {
+public interface ExceptionBundle {
 
     @QeexMessage(message = "prova")
     QeexWebException simpleException();
