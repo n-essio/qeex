@@ -7,7 +7,7 @@ public class QeexWebException extends Exception {
     public String message;
     public String language;
 
-    public QeexWebException() {
+    protected QeexWebException() {
     }
 
     public static QeexWebException builder(String projectName) {

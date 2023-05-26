@@ -24,11 +24,12 @@ public class QuarkusWebDefaultExceptionProvider implements ExceptionMapper<Throw
         if (message == null || message.isBlank()) {
             message = "no default message";
         }
-        QeexWebException webException = new QeexWebException();
-        webException.language = qeexConfig.default_language().get();
-        webException.code = qeexConfig.default_code().get();
-        webException.message = message;
-        webException.language = qeexConfig.default_language().get();
+        QeexWebException webException = QeexWebException
+                .builder(qeexConfig.project().get())
+                .language(qeexConfig.default_language().get())
+                .code(qeexConfig.default_code().get())
+                .message(message)
+                .language(qeexConfig.default_language().get());
         return Response
                 .status(webException.code)
                 .entity(webException.toJson())
