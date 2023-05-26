@@ -15,7 +15,7 @@ public class QuarkusWebExceptionProvider implements ExceptionMapper<QeexWebExcep
     @Produces(MediaType.APPLICATION_JSON)
     public Response toResponse(QeexWebException exception) {
         return Response
-                .status(exception.httpCode)
+                .status(exception.code)
                 .entity(exception.toJson())
                 .build();
     }

@@ -31,7 +31,7 @@ public class AllExceptionsImpl implements AllExceptions {
         String language = null;
         return QeexWebException.builder(qeexConfig.get_project(classProjectName))
                 .code(_id)
-                .httpCode(qeexConfig.get_code(_id, code))
+                .code(qeexConfig.get_code(_id, code))
                 .message(qeexConfig.get_message(_id, message, languageInterceptor.getLanguage()))
                 .language(qeexConfig.get_language(_id, languageInterceptor.getLanguage()));
     }
@@ -46,7 +46,7 @@ public class AllExceptionsImpl implements AllExceptions {
         String language = null;
         return QeexWebException.builder(qeexConfig.get_project(classProjectName))
                 .code(_id)
-                .httpCode(qeexConfig.get_code(_id, code))
+                .code(qeexConfig.get_code(_id, code))
                 .message(qeexConfig.get_message(_id, message, languageInterceptor.getLanguage()))
                 .language(qeexConfig.get_language(_id, languageInterceptor.getLanguage()));
     }
@@ -61,7 +61,7 @@ public class AllExceptionsImpl implements AllExceptions {
         String language = null;
         return QeexWebException.builder(qeexConfig.get_project(classProjectName))
                 .code(_id)
-                .httpCode(qeexConfig.get_code(_id, code))
+                .code(qeexConfig.get_code(_id, code))
                 .message(qeexConfig.get_message(_id, message, languageInterceptor.getLanguage()))
                 .language(qeexConfig.get_language(_id, languageInterceptor.getLanguage()));
     }
@@ -76,7 +76,7 @@ public class AllExceptionsImpl implements AllExceptions {
         String language = null;
         return QeexWebException.builder(qeexConfig.get_project(classProjectName))
                 .code(_id)
-                .httpCode(qeexConfig.get_code(_id, code))
+                .code(qeexConfig.get_code(_id, code))
                 .message(qeexConfig.get_message(_id, message, languageInterceptor.getLanguage()))
                 .language(qeexConfig.get_language(_id, languageInterceptor.getLanguage()));
     }
